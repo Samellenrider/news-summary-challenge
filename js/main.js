@@ -1,32 +1,27 @@
 
 var dataContainer = document.getElementById("guardian-news");
 var btn = document.getElementById("rfrsh");
-console.log('yoyoyo')
-btn.addEventListener("click", ajaxCall(););
 
-function ajaxCall() {
+btn.addEventListener("click", function () {
 	var guardianRequest = new XMLHttpRequest();
-    var url = 'https://www.theguardian.com/uk'
-
-  function callGuardianDomain() {
-	if(guardianRequest) {
-      guardianRequest.open('GET', url, true);
-      guardianRequest.onreadystatechange = handler;
+      guardianRequest.open('GET', 'https://content.guardianapis.com/search?api-key=c148d976-d913-445c-8148-b46110b280d0');
       guardianRequest.onload = function() {
         var guardianData = JSON.parse(guardianRequest.responseText);
         renderHTML(guardianData);
 	};
       guardianRequest.send();
-  }
- }
-};
+  });
 
 function renderHTML(data) {
-  dataContainer.insertAdjacentHTML('beforeend', 'test 123')
+	var htmlString = ""
+
+	for(i=0; i < 5; i++) {
+		htmlString += '<li><a href= ' + data.response.results[i].webUrl + '>' + data.response.results[i].webTitle + '</a></li>'
+	} 
+  
+  dataContainer.insertAdjacentHTML('beforeend', htmlString)
 }
 
-
-// btn.addEventListener("click", ajaxCall(););
 
 
 
