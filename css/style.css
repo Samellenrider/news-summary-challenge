@@ -3,6 +3,12 @@ h1 {
     font-weight: normal;
 }
 
+button { 
+        width: 100px;
+        height: 20px;
+        color: red;
+ }
+
 div {
 	font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: normal;

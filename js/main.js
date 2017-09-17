@@ -18,7 +18,7 @@ function renderHTML(data) {
 	var htmlString = ""
 
 	for(i=0; i < 5; i++) {
-		htmlString += '<a href= ' + data.response.results[i].webUrl + '/#img-1>' + '<img href= ' + data.response.results[i].webUrl + '/#img-1' + '> Pic </img></a>'
+		htmlString += '<a href= ' + data.response.results[i].webUrl + '/#img-1>' + '<img scr=" ' + data.response.results[i].webUrl + '/#img-1" alt="" style="width:304px;height:228px;"' + '></img>Pic</a>'
 		htmlString += '<li><a href= ' + data.response.results[i].webUrl + '>' + data.response.results[i].webTitle + '</a></li>'
 
 
