@@ -8,8 +8,6 @@ btn.addEventListener("click", function () {
       guardianRequest.onload = function() {
         var guardianData = JSON.parse(guardianRequest.responseText);
         renderHTML(guardianData);
-        // var guardianPicture = JSON.parse(guardianRequest.responseText);
-        // renderHTML(guardianPicture)
 	  };
       guardianRequest.send();
   });
@@ -18,15 +16,16 @@ function renderHTML(data) {
 	var htmlString = ""
 
 	for(i=0; i < 5; i++) {
-		htmlString += '<a href= ' + data.response.results[i].webUrl + '/#img-1>' + '<img scr=" ' + data.response.results[i].webUrl + '/#img-1" alt="" style="width:304px;height:228px;"' + '></img>Pic</a>'
+		
+		htmlString += '<a href=' + data.response.results[i].webUrl + '/#img-1><img scr=" ' + data.response.results[i].webUrl + '/#img-1" alt="" style="width:455px;height:273px;"' + '></a>'
+		
 		htmlString += '<li><a href= ' + data.response.results[i].webUrl + '>' + data.response.results[i].webTitle + '</a></li>'
-
-
 	} 
   
+
+
+
   dataContainer.insertAdjacentHTML('beforeend', htmlString)
 }
-
-
 
 
